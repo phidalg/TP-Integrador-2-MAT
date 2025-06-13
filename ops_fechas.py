@@ -3,7 +3,7 @@ def ingresar_datos(dato):
     contador = 0
     while True:
         contador += 1
-        entrada = input(f"Ingrese el {dato} del integrante {contador} del grupo, o ingrese x para terminar: ")
+        entrada = input(f"Ingrese {dato} del integrante {contador} del grupo, o ingrese x para terminar: ")
         if entrada.upper() == "X":
             return lista
         try:
@@ -45,8 +45,8 @@ def producto_cartesiano(conjunto1, conjunto2):
 
 
 def operaciones_con_anios():
-    print("*** Operaciones con años de nacimiento ***")
-    anios = ingresar_datos("año de nacimiento")
+    print("\n*** Operaciones con años de nacimiento ***\n")
+    anios = ingresar_datos("el año de nacimiento")
     print("Años ingresados: ", anios)
     pares, impares = contar_anios_pares(anios)
     print(f"{pares} años pares, {impares} años impares.")
@@ -55,7 +55,7 @@ def operaciones_con_anios():
     if hay_anio_bisiesto(anios):
         print(f"Tenemos un año especial.")
     print("Para calcular el producto cartesiano entre los conjuntos Años y Edades, \nnecesitamos las edades de los integrantes del grupo.")
-    edades = ingresar_datos("edad")
+    edades = ingresar_datos("la edad")
     producto = producto_cartesiano(anios, edades)
     print(f"El produco cartesiano entre el conjunto Años y el conjunto Edades es {producto}.")
 
