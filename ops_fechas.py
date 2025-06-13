@@ -36,6 +36,14 @@ def hay_anio_bisiesto(anios): # Devuelve True si hay al menos un año bisiesto.
             return True
     return False
 
+def producto_cartesiano(conjunto1, conjunto2):
+    producto = []
+    for i in conjunto1:
+        for j in conjunto2:
+            producto.append((i, j))
+    return producto
+
+
 def operaciones_con_anios():
     print("*** Operaciones con años de nacimiento ***")
     anios = ingresar_datos("año de nacimiento")
@@ -46,6 +54,9 @@ def operaciones_con_anios():
         print("Grupo Z (Todos nacieron después del 2000).")
     if hay_anio_bisiesto(anios):
         print(f"Tenemos un año especial.")
-
+    print("Para calcular el producto cartesiano entre los conjuntos Años y Edades, \nnecesitamos las edades de los integrantes del grupo.")
+    edades = ingresar_datos("edad")
+    producto = producto_cartesiano(anios, edades)
+    print(f"El produco cartesiano entre el conjunto Años y el conjunto Edades es {producto}.")
 
 operaciones_con_anios()
