@@ -9,7 +9,7 @@ def ingresar_datos(dato):
         try:
             lista.append(int(entrada))
         except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número entero o 'x' para salir.")
+            print("Entrada inválida. Por favor, ingrese un número entero o 'x' para salir: ")
             contador -= 1  # No contar intentos fallidos
 
 def contar_anios_pares(anios):
@@ -27,7 +27,7 @@ def grupo_z(anios): # Devuelve True si todos nacieron después del 2000
             return False
     return True
 
-def es_bisiesto(anio):
+def es_bisiesto(anio): # "Es bisiesto si es divisible entre 4, pero si también es divisible entre 100, entonces solo será bisiesto si es divisible entre 400."
     return (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0)
 
 def hay_anio_bisiesto(anios): # Devuelve True si hay al menos un año bisiesto.
@@ -47,16 +47,16 @@ def producto_cartesiano(conjunto1, conjunto2):
 def operaciones_con_anios():
     print("\n*** Operaciones con años de nacimiento ***\n")
     anios = ingresar_datos("el año de nacimiento")
-    print("Años ingresados: ", anios)
+    print(f"\nAños ingresados: {anios}\n")
     pares, impares = contar_anios_pares(anios)
-    print(f"{pares} años pares, {impares} años impares.")
+    print(f"{pares} años pares, {impares} años impares.\n")
     if grupo_z(anios):
-        print("Grupo Z (Todos nacieron después del 2000).")
+        print("Grupo Z (Todos nacieron después del 2000).\n")
     if hay_anio_bisiesto(anios):
-        print(f"Tenemos un año especial.")
-    print("Para calcular el producto cartesiano entre los conjuntos Años y Edades, \nnecesitamos las edades de los integrantes del grupo.")
+        print(f"Tenemos un año especial.\n")
+    print("Para calcular el producto cartesiano entre los conjuntos Años y Edades, necesitamos\nlas edades de los integrantes del grupo.")
     edades = ingresar_datos("la edad")
     producto = producto_cartesiano(anios, edades)
-    print(f"El produco cartesiano entre el conjunto Años y el conjunto Edades es {producto}.")
+    print(f"\nEl produco cartesiano entre el conjunto Años y el conjunto Edades es {producto}.\n")
 
 operaciones_con_anios()
